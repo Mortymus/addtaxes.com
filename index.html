@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="tax_style.css">
+    <script src="navigation.js" defer></script>
     <title>addtaxes.com</title>
 </head>
 
@@ -15,9 +16,11 @@
     </header>
 
     <nav>
-        <button class="button-container">
-            Choose province
-            <div class="drop-down">
+        <div class="button-container">
+            <button onclick="dropMenu('drop-down-provinces')">
+                Choose province
+            </button>
+            <div class="drop-down-hidden" id="drop-down-provinces">
                 <button>Alberta</button>
                 <button>British Columbia</button>
                 <button>Manitoba</button>
@@ -32,7 +35,7 @@
                 <button>Saskatchewan</button>
                 <button>Yukon</button>
             </div>
-        </button>
+        </div>
         <svg xmlns="http://www.w3.org/2000/svg" class="svg"  viewBox="0 -960 960 960">
             <path d="M229-189h127v-257h249v257h126v-377L480-754 229-566.333V-189Zm-91 91v-514l342-257 
                 343 257v514H525v-268h-89v268H138Zm342-374Z"/>
@@ -65,26 +68,29 @@
 
     <main>
         <div id="calculator">
-            Please enter amount
+            <p>
+                Please enter amount
+            </p>
             <input type="number" min="0" id="amount">
             <nav>
-                <button class="button-container">
-                    tip
-                    <div class="drop-down">
+                <div class="button-container">
+                    <button onclick="dropMenu('drop-down-tip')">
+                        tip
+                    </button>
+                    <div class="drop-down-hidden" id="drop-down-tip">
                         <button>5%</button>
                         <button>10%</button>
                         <button>15%</button>
                         <button>20%</button>
                         <button>25%</button>
                     </div>
-                </button>
+                </div>
                 <button>%</button>
                 <button>deduct</button>
                 <button>add</button>
                 <button>C</button>
             </nav>
         </div>
-
     </main>
 
 </body>

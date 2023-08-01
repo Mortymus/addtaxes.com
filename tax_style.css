@@ -1,14 +1,44 @@
+/* Color Variables */
+
+:root {
+    --color-text: #000000;
+    --color-background: azure;
+}
+
+/* Body */
+
+body {
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* Top navigation bar */
+
 .svg {
     height: 48px;
     width: 48px;
     transform: scale(1);
+    fill: var(--color-text);
 }
+
+nav {
+    display: flex;
+}
+
+/* Drop-down menus */
 
 .button-container {
     position: relative;
 }
 
-.drop-down {
+.drop-down-hidden {
     position: absolute;
-    background-color: red;
+    display: none;
+}
+
+.drop-down-visible {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
 }
