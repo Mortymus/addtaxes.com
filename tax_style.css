@@ -14,9 +14,19 @@ body {
 
 /* Top navigation bar */
 
-.svg {
+.svg-icon {
     height: 48px;
     width: 48px;
+    transform: scale(1);
+    fill: var(--color-text);
+}
+
+.svg-x {
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+    height: 1.6rem;
+    width: auto;
     transform: scale(1);
     fill: var(--color-text);
 }
@@ -27,7 +37,7 @@ nav {
 
 /* Drop-down menus */
 
-.button-container {
+.container {
     position: relative;
 }
 
@@ -38,7 +48,13 @@ nav {
 
 .drop-down-visible {
     position: absolute;
+    background-color: var(--color-background);
     display: flex;
     flex-direction: column;
     z-index: 1;
+}
+
+#error {
+    padding: 1rem 0.4rem 0.4rem 0.4rem;
+    border: solid var(--color-text) 2px;
 }

@@ -10,7 +10,7 @@
         <title>addtaxes.com</title>
     </head>
 
-    <body onload="showProvince(province); showAmount(amount, province);">
+    <body onload="showProvince(province)">
 
         <header>
             <h1>addtaxes.com</h1>
@@ -18,7 +18,7 @@
         </header>
 
         <nav>
-            <div class="button-container" id="container-provinces">
+            <div class="container" id="container-provinces">
                 <button onclick="dropMenu('drop-down-provinces')">
                     Choose province
                 </button>
@@ -38,11 +38,11 @@
                     <button>Yukon</button>
                 </div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="svg"  viewBox="0 -960 960 960">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon"  viewBox="0 -960 960 960">
                 <path d="M229-189h127v-257h249v257h126v-377L480-754 229-566.333V-189Zm-91 91v-514l342-257 
                     343 257v514H525v-268h-89v268H138Zm342-374Z"/>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="svg" viewBox="0 -960 960 960">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 -960 960 960">
                 <path d="M443-271h79v-249h-79v249Zm36.982-306q20.518 0 33.768-12.9Q527-602.799 
                     527-622.825q0-23.125-13.182-35.65Q500.636-671 480.193-671q-22.693 0-34.943 
                     12.35Q433-646.301 433-624.175q0 21.275 13.232 34.225Q459.465-577 
@@ -78,13 +78,34 @@
 
         <main>
 
-            <section id="calculator">
+            <section id="calculator" class="container">
                 <p>
                     Please enter amount
                 </p>
-                <input type="number" min="0" id="amount">
+                <div id="error" class="drop-down-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-x" 
+                        onclick="hideMenu('error')" viewBox="0 -960 960 960">
+                        <path d="m336-288 144-144 144 144 48-48-144-144 
+                            144-144-48-48-144 144-144-144-48 48 144 144-144 
+                            144 48 48ZM189-98q-37.175 0-64.088-26.912Q98-151.825 
+                            98-189v-582q0-37.588 26.912-64.794Q151.825-863 
+                            189-863h582q37.588 0 64.794 27.206Q863-808.588 
+                            863-771v582q0 37.175-27.206 64.088Q808.588-98 
+                            771-98H189Zm0-91h582v-582H189v582Zm0-582v582-582Z"/>
+                    </svg>
+                    <p id="error-msg">
+                        You have to enter a number.
+                        You have to enter a number.
+                        You have to enter a number.
+                        You have to enter a number.
+                        You have to enter a number.
+                        You have to enter a number.
+                        You have to enter a number.
+                    </p>
+                </div>
+                <input type="text" id="amount">
                 <nav>
-                    <div class="button-container" id="container-tip">
+                    <div class="container" id="container-tip">
                         <button onclick="dropMenu('drop-down-tip')">
                             tip
                         </button>
@@ -96,10 +117,10 @@
                             <button>25%</button>
                         </div>
                     </div>
-                    <button>%</button>
-                    <button>deduct</button>
-                    <button>add</button>
-                    <button>C</button>
+                    <button onclick="calculateTax(amount, province)">%</button>
+                    <button onclick="deductTax(amount, province)">deduct</button>
+                    <button onclick="addTax(amount, province)">add</button>
+                    <button onclick="clearInput(amount)">C</button>
                 </nav>
             </section>
 
