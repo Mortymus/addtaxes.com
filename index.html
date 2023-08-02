@@ -4,12 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="tax_style.css">
+        <link rel=icon href="images/dollar.svg">
         <script src="navigation.js" defer></script>
         <script src="calculations.js" defer></script>
         <title>addtaxes.com</title>
     </head>
 
-    <body onload="showProvince(); showAmount();">
+    <body onload="showProvince(province); showAmount(amount, province);">
 
         <header>
             <h1>addtaxes.com</h1>
@@ -17,7 +18,7 @@
         </header>
 
         <nav>
-            <div class="button-container">
+            <div class="button-container" id="container-provinces">
                 <button onclick="dropMenu('drop-down-provinces')">
                     Choose province
                 </button>
@@ -83,7 +84,7 @@
                 </p>
                 <input type="number" min="0" id="amount">
                 <nav>
-                    <div class="button-container">
+                    <div class="button-container" id="container-tip">
                         <button onclick="dropMenu('drop-down-tip')">
                             tip
                         </button>
