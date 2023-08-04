@@ -21,29 +21,59 @@ function showProvince(provinceObject) {
 
 
 // Display amount object
-function showAmount(amountObject, provinceObject, operator) {
+function showAmount(amountObject, provinceObject, operator = null) {
     const rateNames = ["% GST:", "$ PST:", "$ HST:"];
     const rates = [provinceObject.gst, provinceObject.pst, provinceObject.hst];
-    const rateDisplays = [document.getElementById("gst-text"),
-        document.getElementById("pst-text"), document.getElementById("hst-text")];
+    const rateDisplays = ["gst-text", "pst-text", "hst-text"];
     const taxes = [amountObject.gst, amountObject.pst, amountObject.hst];
-    const taxDisplays = [document.getElementById("gst-amount"), 
-        document.getElementById("pst-amount"), document.getElementById("hst-amount")]; 
+    const taxDisplays = ["gst-amount", "pst-amount", "hst-amount"];
+    const tips = ["+ " + amountObject.tipRate + "% tip:", amountObject.tip.toFixed(2) + "$", 
+        "Total incl. tip:", amountObject.tipTotal.toFixed(2) + "$"];
+    const tipDisplays = ["tip-text", "tip-amount", "tip-total-text", "tip-total-amount"];
     document.getElementById("amount-text").innerText = "Amount:";
     document.getElementById("amount-amount").innerText = amountObject.amount.toFixed(2) + "$";
     for (let i = 0; i < rates.length; i++) {
-        if (rates[i] > 0) {
-            rateDisplays[i].style.display = "";
-            taxDisplays[i].style.display = "";
-            rateDisplays[i].innerText = operator + rates[i] + rateNames[i];
-            taxDisplays[i].innerText = taxes[i].toFixed(2) + "$";
+        if (taxes[i] > 0) {
+            resetDisplay(rateDisplays[i]);
+            resetDisplay(taxDisplays[i]);
+            document.getElementById(rateDisplays[i]).innerText = operator + rates[i] + rateNames[i];
+            document.getElementById(taxDisplays[i]).innerText = taxes[i].toFixed(2) + "$";
         } else {
-            rateDisplays[i].style.display = "none";
-            taxDisplays[i].style.display = "none";
+            removeDisplay(rateDisplays[i]);
+            removeDisplay(taxDisplays[i]);
         }
     }
-    document.getElementById("total-text").innerText = "Total:";
-    document.getElementById("total-amount").innerText = amountObject.total.toFixed(2) + "$";
+    if (amountObject.total > 0) {
+        console.log("Kjører if");
+        document.getElementById("total-text").innerText = "Total:";
+        document.getElementById("total-amount").innerText = amountObject.total.toFixed(2) + "$";
+    } else {
+        console.log("Kjører ikke if");
+        removeDisplay("total-text");
+        removeDisplay("total-amount");
+    };
+    for (let i = 0; i < tipDisplays.length; i++) {
+        if (amountObject.tip > 0) {
+            resetDisplay(tipDisplays[i]);
+            document.getElementById(tipDisplays[i]).innerText = tips[i];
+        } else {
+        removeDisplay(tipDisplays[i])
+        };
+    };
+    console.log("End of showAmount(): ",amountObject);
+}
+
+
+// Remove display td
+function removeDisplay(id) {
+    document.getElementById(id).innerText = "";
+    document.getElementById(id).style.display = "none";
+}
+
+
+// Reset display td
+function resetDisplay(id) {
+    document.getElementById(id).style.display = "";
 }
 
 
@@ -55,6 +85,9 @@ function clearInput(amountObject) {
     amountObject.pst = 0;
     amountObject.hst = 0;
     amountObject.total = 0;
+    amountObject.tipRate = 0;
+    amountObject.tip = 0;
+    amountObject.tipTotal = 0;
     clearAmount();
     console.log(amountObject);
 };
@@ -62,20 +95,13 @@ function clearInput(amountObject) {
 
 // Clearing output
 function clearAmount() {
-    const displays = [ 
-        document.getElementById("amount-text"),
-        document.getElementById("amount-amount"),
-        document.getElementById("gst-text"),
-        document.getElementById("gst-amount"),
-        document.getElementById("pst-text"),
-        document.getElementById("pst-amount"),
-        document.getElementById("hst-text"),
-        document.getElementById("hst-amount"),
-        document.getElementById("total-text"),
-        document.getElementById("total-amount"),
-    ];
+    const displays = ["amount-text", "amount-amount", 
+        "gst-text", "gst-amount", "pst-text", "pst-amount", 
+        "hst-text", "hst-amount", "total-text", "total-amount",
+        "tip-text", "tip-amount", "tip-total-text", "tip-total-amount"];
     for (let i = 0; i < displays.length; i++) {
-        displays[i].innerText = "";
-        displays[i].style.display = "";
+        removeDisplay(displays[i]);
+        document.getElementById(displays[i]).innerText = "";
+        document.getElementById(displays[i]).style.display = "";
     };
 };

@@ -131,11 +131,12 @@
                             tip
                         </button>
                         <div class="drop-down-hidden" id="drop-down-tip">
-                            <button>5%</button>
-                            <button>10%</button>
-                            <button>15%</button>
-                            <button>20%</button>
-                            <button>25%</button>
+                            <button onclick="addTip(amount, province, 5)">5%</button>
+                            <button onclick="addTip(amount, province, 10)">10%</button>
+                            <button onclick="addTip(amount, province, 15)">15%</button>
+                            <button onclick="addTip(amount, province, 20)">20%</button>
+                            <button onclick="addTip(amount, province, 25)">25%</button>
+                            <button onclick="addTip(amount, province, 30)">30%</button>
                         </div>
                     </div>
                     <button onclick="calculateTax(amount, province)">%</button>
@@ -166,6 +167,14 @@
                     <tr>
                         <td id="total-text"></td>
                         <td id="total-amount"></td>
+                    </tr>
+                    <tr>
+                        <td id="tip-text"></td>
+                        <td id="tip-amount"></td>
+                    </tr>
+                    <tr>
+                        <td id="tip-total-text"></td>
+                        <td id="tip-total-amount"></td>
                     </tr>
                 </table>
             </section>

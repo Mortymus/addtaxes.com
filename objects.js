@@ -16,6 +16,7 @@ const amount = {
     pst: 0,
     hst: 0,
     total: 0,
+    tipRate: 0,
     tip: 0,
     tipTotal: 0,
 };
