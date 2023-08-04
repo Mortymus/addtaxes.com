@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="tax_style.css">
         <link rel=icon href="images/dollar.svg">
+        <script src="objects.js" defer></script>
+        <script src="displayObjects.js" defer></script>
         <script src="navigation.js" defer></script>
         <script src="calculations.js" defer></script>
         <title>addtaxes.com</title>
@@ -23,19 +25,45 @@
                     Choose province
                 </button>
                 <div class="drop-down-hidden" id="drop-down-provinces">
-                    <button>Alberta</button>
-                    <button>British Columbia</button>
-                    <button>Manitoba</button>
-                    <button>New Brunswick</button>
-                    <button>Newfoundland and Labrador</button>
-                    <button>Northwest Territories</button>
-                    <button>Nova Scotia</button>
-                    <button>Nunavut</button>
-                    <button>Ontario</button>
-                    <button>Prince Edward Island</button>
-                    <button>Quebec</button>
-                    <button>Saskatchewan</button>
-                    <button>Yukon</button>
+                    <button onclick="chooseProvince(amount, province, 'Alberta', 5, 0, 0)">
+                        Alberta
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'British Columbia', 5, 7, 0)">
+                        British Columbia
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Manitoba', 5, 7, 0)">
+                        Manitoba
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'New Brunswick', 0, 0, 15)">
+                        New Brunswick
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Newfoundland and Labrador', 0, 0, 15)">
+                        Newfoundland and Labrador
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Northwest Territories', 5, 0, 0)">
+                        Northwest Territories
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Nova Scotia', 0, 0, 15)">
+                        Nova Scotia
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Nunavut', 5, 0, 0)">
+                        Nunavut
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Ontario', 0, 0, 13)">
+                        Ontario
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Prince Edward Island', 0, 0, 15)">
+                        Prince Edward Island
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Quebec', 5, 9.975, 0)">
+                        Quebec
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Saskatchewan', 5, 6, 0)">
+                        Saskatchewan
+                    </button>
+                    <button onclick="chooseProvince(amount, province, 'Yukon', 5, 0, 0)">
+                        Yukon
+                    </button>
                 </div>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon"  viewBox="0 -960 960 960">
@@ -94,13 +122,6 @@
                             771-98H189Zm0-91h582v-582H189v582Zm0-582v582-582Z"/>
                     </svg>
                     <p id="error-msg">
-                        You have to enter a number.
-                        You have to enter a number.
-                        You have to enter a number.
-                        You have to enter a number.
-                        You have to enter a number.
-                        You have to enter a number.
-                        You have to enter a number.
                     </p>
                 </div>
                 <input type="text" id="amount">
@@ -127,24 +148,24 @@
             <section id="feedback">
                 <table>
                     <tr>
-                        <td id="amount-text">Amount: </td>
-                        <td id="amount-amount">400.00$</td>
+                        <td id="amount-text"></td>
+                        <td id="amount-amount"></td>
                     </tr>
                     <tr>
-                        <td id="gst-text">+ 5% gst:</td>
-                        <td id="gst-amount">50.00$</td>
+                        <td id="gst-text"></td>
+                        <td id="gst-amount"></td>
                     </tr>
                     <tr>
-                        <td id="pst-text">+ 7% pst:</td>
-                        <td id="pst-amount">70.00$</td>
+                        <td id="pst-text"></td>
+                        <td id="pst-amount"></td>
                     </tr>
                     <tr>
-                        <td id="hst-text">+ 12% hst:</td>
-                        <td id="hst-amount">120.00$</td>
+                        <td id="hst-text"></td>
+                        <td id="hst-amount"></td>
                     </tr>
                     <tr>
-                        <td id="total-text">Total:</td>
-                        <td id="total-amount">500.00$</td>
+                        <td id="total-text"></td>
+                        <td id="total-amount"></td>
                     </tr>
                 </table>
             </section>

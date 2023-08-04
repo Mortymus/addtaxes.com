@@ -31,6 +31,8 @@ body {
     fill: var(--color-text);
 }
 
+/* Navigational bars */
+
 nav {
     display: flex;
 }
@@ -54,7 +56,13 @@ nav {
     z-index: 1;
 }
 
+/* Modal */
+
 #error {
     padding: 1rem 0.4rem 0.4rem 0.4rem;
     border: solid var(--color-text) 2px;
+}
+
+#feedback td {
+    background: red;
 }
