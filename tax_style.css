@@ -8,8 +8,20 @@
 /* Body */
 
 body {
+    max-width: 800px;
+    margin: auto;
     color: var(--color-text);
     background-color: var(--color-background);
+}
+
+/* Header */
+
+header {
+    text-align: center;
+}
+
+header table {
+    margin: auto;
 }
 
 /* Top navigation bar */
@@ -35,6 +47,7 @@ body {
 
 nav {
     display: flex;
+    justify-content: center;
 }
 
 /* Drop-down menus */
@@ -65,4 +78,17 @@ nav {
 
 #feedback td {
     background: red;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.calc_display {
+    min-width: 400px;
+    background-color: red;
 }

@@ -45,6 +45,8 @@ function showAmount(amountObject, provinceObject, operator = null) {
     }
     if (amountObject.total > 0) {
         console.log("Kjører if");
+        resetDisplay("total-text");
+        resetDisplay("total-amount");
         document.getElementById("total-text").innerText = "Total:";
         document.getElementById("total-amount").innerText = amountObject.total.toFixed(2) + "$";
     } else {
