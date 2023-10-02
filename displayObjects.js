@@ -43,7 +43,7 @@ function showAmount(amountObject, provinceObject, operator = null) {
             removeDisplay(taxDisplays[i]);
         }
     }
-    if (amountObject.total > 0) {
+    if (amountObject.total > 0 && amountObject.tip == 0) {
         console.log("Kjører if");
         resetDisplay("total-text");
         resetDisplay("total-amount");

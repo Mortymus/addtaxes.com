@@ -21,7 +21,11 @@ header {
 }
 
 header table {
-    margin: auto;
+    margin:auto;
+}
+
+h3 {
+    margin: 0.6rem auto 0.6rem auto;
 }
 
 /* Top navigation bar */
@@ -88,7 +92,16 @@ main {
     justify-content: center;
 }
 
-.calc_display {
-    min-width: 400px;
-    background-color: red;
+.main-section {
+    text-align: center;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+#calculator {
+    margin-bottom: 1rem;
+}
+
+#feedback-table {
+    margin: auto;
 }

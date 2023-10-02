@@ -3,7 +3,7 @@
 // Adding tax
 function addTax(amountObject, provinceObject) {
     let input = validateInput(document.getElementById("amount").value);
-    if (input > 0) {
+    if (input > 0 && amountObject.total == 0 || input != amountObject.amount) {
         resetTip(amountObject);
         amountObject.amount = input;
         console.log("amountObject.amount" + amountObject.amount);
@@ -22,7 +22,7 @@ function addTax(amountObject, provinceObject) {
 // Deducting tax
 function deductTax(amountObject, provinceObject) {
     let input = validateInput(document.getElementById("amount").value);
-    if (input > 0) {
+    if (input > 0 && amountObject.total == 0 || input != amountObject.amount) {
         resetTip(amountObject);
         amountObject.amount = input;
         let totalTax = provinceObject.gst + provinceObject.pst + provinceObject.hst; 
@@ -46,7 +46,7 @@ function deductTax(amountObject, provinceObject) {
 // Calculating tax
 function calculateTax(amountObject, provinceObject) {
     let input = validateInput(document.getElementById("amount").value);
-    if (input > 0) {
+    if (input > 0 && amountObject.total == 0 || input != amountObject.amount) {
         resetTip(amountObject);
         amountObject.amount = input;
         let totalTax = provinceObject.gst + provinceObject.pst + provinceObject.hst; 
