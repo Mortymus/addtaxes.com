@@ -2,16 +2,19 @@
 
 :root {
     --color-text: #000000;
-    --color-background: azure;
+    --color-border: #000000;
+    --color-background: rgb(241, 247, 250);
+    --color-header: rgb(198, 247, 247); 
 }
 
 /* Body */
 
 body {
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
     color: var(--color-text);
     background-color: var(--color-background);
+    padding: 1rem;
 }
 
 /* Header */
@@ -20,19 +23,33 @@ header {
     text-align: center;
 }
 
-header table {
-    margin:auto;
+#header-main {
+    background-color: var(--color-header);
+    border-radius: 1rem;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
 }
 
-h3 {
-    margin: 0.6rem auto 0.6rem auto;
+header table {
+    margin: auto;
 }
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+
+
+h2 {
+    font-size: 1rem;
+}
+
 
 /* Top navigation bar */
 
 .svg-icon {
-    height: 48px;
-    width: 48px;
+    height: 32px;
+    width: 32px;
     transform: scale(1);
     fill: var(--color-text);
 }
@@ -77,11 +94,10 @@ nav {
 
 #error {
     padding: 1rem 0.4rem 0.4rem 0.4rem;
-    border: solid var(--color-text) 2px;
-}
+    border: solid var(--color-border) 2px;
+    min-width: 80%;
+    max-width: 500px;
 
-#feedback td {
-    background: red;
 }
 
 /* Main */
@@ -104,4 +120,19 @@ main {
 
 #feedback-table {
     margin: auto;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+#feedback-table td {
+    text-align: right;
+}
+
+.td-border {
+    border-top: solid 0.1rem var(--color-border);
+    border-bottom: 0.25rem double;   
+}
+
+.td-no-border {
+    border: none;
 }

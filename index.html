@@ -14,12 +14,13 @@
 
     <body onload="showProvince(province)">
 
-        <header>
+        <header id="header-main">
             <h1>addtaxes.com</h1>
             <h2>Official Canadian rates of gst, pst and hst</h2>
         </header>
-
+        <header>
         <nav>
+
             <div class="container" id="container-provinces">
                 <button onclick="dropMenu('drop-down-provinces')">
                     Choose province
@@ -66,6 +67,7 @@
                     </button>
                 </div>
             </div>
+
             <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon"  viewBox="0 -960 960 960">
                 <path d="M229-189h127v-257h249v257h126v-377L480-754 229-566.333V-189Zm-91 91v-514l342-257 
                     343 257v514H525v-268h-89v268H138Zm342-374Z"/>
@@ -85,7 +87,9 @@
                     479.729-810q-136.242 0-232.985 96.327Q150-617.346 150-479.729q0 
                     136.242 96.387 232.985Q342.773-150 480.271-150ZM480-480Z"/>
             </svg>
+
         </nav>
+        </header>
 
         <header>
             <table>
@@ -105,25 +109,26 @@
         </header>
 
         <main>
+                       
+            <div id="error" class="drop-down-hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg-x" 
+                    onclick="hideMenu('error')" viewBox="0 -960 960 960">
+                    <path d="m336-288 144-144 144 144 48-48-144-144 
+                        144-144-48-48-144 144-144-144-48 48 144 144-144 
+                        144 48 48ZM189-98q-37.175 0-64.088-26.912Q98-151.825 
+                        98-189v-582q0-37.588 26.912-64.794Q151.825-863 
+                        189-863h582q37.588 0 64.794 27.206Q863-808.588 
+                        863-771v582q0 37.175-27.206 64.088Q808.588-98 
+                        771-98H189Zm0-91h582v-582H189v582Zm0-582v582-582Z"/>
+                </svg>
+                <p id="error-msg">
+                </p>
+            </div>
 
-            <section id="calculator" class="main-section container">
+            <section id="calculator" class="main-section">
                 <p>
                     Please enter amount
-                </p>
-                <div id="error" class="drop-down-hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-x" 
-                        onclick="hideMenu('error')" viewBox="0 -960 960 960">
-                        <path d="m336-288 144-144 144 144 48-48-144-144 
-                            144-144-48-48-144 144-144-144-48 48 144 144-144 
-                            144 48 48ZM189-98q-37.175 0-64.088-26.912Q98-151.825 
-                            98-189v-582q0-37.588 26.912-64.794Q151.825-863 
-                            189-863h582q37.588 0 64.794 27.206Q863-808.588 
-                            863-771v582q0 37.175-27.206 64.088Q808.588-98 
-                            771-98H189Zm0-91h582v-582H189v582Zm0-582v582-582Z"/>
-                    </svg>
-                    <p id="error-msg">
-                    </p>
-                </div>
+                </p>                
                 <input type="text" id="amount">
                 <nav>
                     <div class="container" id="container-tip">
@@ -165,21 +170,20 @@
                         <td id="hst-amount"></td>
                     </tr>
                     <tr>
-                        <td id="total-text"></td>
-                        <td id="total-amount"></td>
+                        <td id="total-text" class="td-no-border"></td>
+                        <td id="total-amount" class="td-no-border"></td>
                     </tr>
                     <tr>
                         <td id="tip-text"></td>
                         <td id="tip-amount"></td>
                     </tr>
                     <tr>
-                        <td id="tip-total-text"></td>
-                        <td id="tip-total-amount"></td>
+                        <td id="tip-total-text" class="td-no-border"></td>
+                        <td id="tip-total-amount" class="td-no-border"></td>
                     </tr>
                 </table>
             </section>
-            
+        
         </main>
-
     </body>
 </html>

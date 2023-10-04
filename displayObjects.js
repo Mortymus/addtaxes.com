@@ -47,10 +47,14 @@ function showAmount(amountObject, provinceObject, operator = null) {
         console.log("Kjører if");
         resetDisplay("total-text");
         resetDisplay("total-amount");
+        switchClasses("td-no-border", "td-border", "total-text");
+        switchClasses("td-no-border", "td-border", "total-amount");
         document.getElementById("total-text").innerText = "Total:";
         document.getElementById("total-amount").innerText = amountObject.total.toFixed(2) + "$";
     } else {
         console.log("Kjører ikke if");
+        switchClasses("td-border", "td-no-border", "total-text");
+        switchClasses("td-border", "td-no-border", "total-amount");
         removeDisplay("total-text");
         removeDisplay("total-amount");
     };
@@ -58,8 +62,12 @@ function showAmount(amountObject, provinceObject, operator = null) {
         if (amountObject.tip > 0) {
             resetDisplay(tipDisplays[i]);
             document.getElementById(tipDisplays[i]).innerText = tips[i];
+            switchClasses("td-no-border", "td-border", "tip-total-text");
+            switchClasses("td-no-border", "td-border", "tip-total-amount");
         } else {
-        removeDisplay(tipDisplays[i])
+            removeDisplay(tipDisplays[i])
+            switchClasses("td-border", "td-no-border", "tip-total-text");
+            switchClasses("td-border", "td-no-border", "tip-total-amount");
         };
     };
     console.log("End of showAmount(): ",amountObject);
@@ -105,5 +113,9 @@ function clearAmount() {
         removeDisplay(displays[i]);
         document.getElementById(displays[i]).innerText = "";
         document.getElementById(displays[i]).style.display = "";
-    };
+    }; 
+    switchClasses("td-border", "td-no-border", "total-text");
+    switchClasses("td-border", "td-no-border", "total-amount");
+    switchClasses("td-border", "td-no-border", "tip-total-text");
+    switchClasses("td-border", "td-no-border", "tip-total-amount");
 };
