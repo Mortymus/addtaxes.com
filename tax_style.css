@@ -1,20 +1,59 @@
+/* Fonts */
+
+/* Header h1 */
+@font-face {
+    font-family: 'montserrat_alternatesmedium';
+    src: url('fonts/montserratalternates-medium-webfont.woff2') format('woff2'),
+         url('fonts/montserratalternates-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Header h2 */
+@font-face {
+    font-family: 'montserrat_alternateslight';
+    src: url('fonts/montserratalternates-light-webfont.woff2') format('woff2'),
+         url('fonts/montserratalternates-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Header h3 */
+@font-face {
+    font-family: 'biryaniregular';
+    src: 
+         url('fonts/Biryani-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Font variables */
+
+:root {
+    --font-main-header-h1: 'montserrat_alternatesmedium'; 
+    --font-main-header-h2: 'montserrat_alternateslight';
+    --font-header-h3: 'biryaniregular';
+}
+
 /* Color Variables */
 
 :root {
     --color-text: #000000;
     --color-border: #000000;
-    --color-background: rgb(241, 247, 250);
-    --color-header: rgb(198, 247, 247); 
+    --color-background: #faf9f6;
+    --color-header: #e6f7ff; 
+    --color-button: #c6f7f7;
 }
 
 /* Body */
 
 body {
-    max-width: 600px;
+    /*max-width: 600px;*/
     margin: auto;
     color: var(--color-text);
     background-color: var(--color-background);
-    padding: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
 }
 
 /* Header */
@@ -23,36 +62,46 @@ header {
     text-align: center;
 }
 
-#header-main {
-    background-color: var(--color-header);
-    border-radius: 1rem;
-    padding: 0.6rem;
-    margin-bottom: 1rem;
+h1, h2, h3 {
+    margin: 0;
+}
+
+h2 {
+    font-family: var(--font-main-header-h2);
+    font-weight: 400
+}
+
+h3 {
+    font-family: var(--font-header-h3), 'arial';
+    font-weight: 400;
+}
+
+#header-main h1{
+    margin-top: 0.6rem;
+    font-family: var(--font-main-header-h1), 'Courier New', 'monospace';
+    font-weight: 400;
+    font-size: 2.8rem;
+}
+
+#header-main h2 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+#header-province-h3 {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+}
+
+#header-rates-h3 {
+    font-size: 1.2rem;
 }
 
 header table {
     margin: auto;
 }
 
-h1, h2, h3 {
-    margin: 0;
-}
-
-
-
-h2 {
-    font-size: 1rem;
-}
-
-
 /* Top navigation bar */
-
-.svg-icon {
-    height: 32px;
-    width: 32px;
-    transform: scale(1);
-    fill: var(--color-text);
-}
 
 .svg-x {
     position: absolute;
@@ -67,8 +116,40 @@ h2 {
 /* Navigational bars */
 
 nav {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+}
+
+#nav-main {
+    border-top: 0.14rem solid var(--color-border);
+    border-bottom: 0.14rem solid var(--color-border);
+}
+
+.nav-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    width: 10rem;
+    background-color: var(--color-button);
+    border: 0.14rem solid var(--color-border);
+    border-radius: 0.4rem;
+    margin: 0.2rem 0.2rem 0.4rem 0.2rem;
+    box-shadow: 0 0.2rem 0.4rem 0;
+}
+
+.nav-drop-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    width: 10rem;
+    background-color: var(--color-button);
+    border: 0.14rem solid var(--color-border);
+    margin: 0;
+    box-shadow: 0 0.2rem 0.4rem 0;
+}
+
+#drop-down-provinces {
+    border: 0.1rem solid var(--color-border);
+    border-radius: 0.4rem;
 }
 
 /* Drop-down menus */

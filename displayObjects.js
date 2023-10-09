@@ -1,6 +1,6 @@
 // Display province object
 function showProvince(provinceObject) {
-    document.getElementById("province").innerText = province.name;
+    document.getElementById("header-province-h3").innerText = province.name;
     const rates = [provinceObject.gst, provinceObject.pst, provinceObject.hst];
     const displays = [document.getElementById("gst"), document.getElementById("pst"), 
         document.getElementById("hst")];
