@@ -22,7 +22,7 @@ function showProvince(provinceObject) {
 
 // Display amount object
 function showAmount(amountObject, provinceObject, operator = null) {
-    const rateNames = ["% GST:", "$ PST:", "$ HST:"];
+    const rateNames = ["% GST:", "% PST:", "% HST:"];
     const rates = [provinceObject.gst, provinceObject.pst, provinceObject.hst];
     const rateDisplays = ["gst-text", "pst-text", "hst-text"];
     const taxes = [amountObject.gst, amountObject.pst, amountObject.hst];
