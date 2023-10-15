@@ -28,7 +28,7 @@ function showAmount(amountObject, provinceObject, operator = null) {
     const taxes = [amountObject.gst, amountObject.pst, amountObject.hst];
     const taxDisplays = ["gst-amount", "pst-amount", "hst-amount"];
     const tips = ["+ " + amountObject.tipRate + "% tip:", amountObject.tip.toFixed(2) + "$", 
-        "Total incl. tip:", amountObject.tipTotal.toFixed(2) + "$"];
+        "Total:", amountObject.tipTotal.toFixed(2) + "$"];
     const tipDisplays = ["tip-text", "tip-amount", "tip-total-text", "tip-total-amount"];
     document.getElementById("amount-text").innerText = "Amount:";
     document.getElementById("amount-amount").innerText = amountObject.amount.toFixed(2) + "$";
@@ -44,7 +44,6 @@ function showAmount(amountObject, provinceObject, operator = null) {
         }
     }
     if (amountObject.total > 0 && amountObject.tip == 0) {
-        console.log("Kjører if");
         resetDisplay("total-text");
         resetDisplay("total-amount");
         switchClasses("td-no-border", "td-border", "total-text");
@@ -52,7 +51,6 @@ function showAmount(amountObject, provinceObject, operator = null) {
         document.getElementById("total-text").innerText = "Total:";
         document.getElementById("total-amount").innerText = amountObject.total.toFixed(2) + "$";
     } else {
-        console.log("Kjører ikke if");
         switchClasses("td-border", "td-no-border", "total-text");
         switchClasses("td-border", "td-no-border", "total-amount");
         removeDisplay("total-text");
@@ -70,7 +68,6 @@ function showAmount(amountObject, provinceObject, operator = null) {
             switchClasses("td-border", "td-no-border", "tip-total-amount");
         };
     };
-    console.log("End of showAmount(): ",amountObject);
 }
 
 
@@ -99,7 +96,6 @@ function clearInput(amountObject) {
     amountObject.tip = 0;
     amountObject.tipTotal = 0;
     clearAmount();
-    console.log(amountObject);
 };
 
 

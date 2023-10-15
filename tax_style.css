@@ -1,3 +1,5 @@
+/* Mobile first design *7
+
 /* Fonts */
 
 /* Header h1 */
@@ -39,27 +41,30 @@
 
 :root {
     --color-text: #000000;
-    --color-border: #000000;
+    --color-border: #0275d8;
+    --color-body: #faf9f6;
     --color-background: #faf9f6;
-    --color-header: #e6f7ff; 
-    --color-button: #c6f7f7;
+    --color-text-button: #ffffff; 
+    --color-button: #0275d8;
+    --color-button-hover: #5bc0de;
 }
 
 /* Body */
 
 body {
-    /*max-width: 600px;*/
     margin: auto;
     color: var(--color-text);
-    background-color: var(--color-background);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--color-body);
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
 }
 
 /* Header */
 
 header {
+    margin: auto;
     text-align: center;
+    max-width: 600px;
 }
 
 h1, h2, h3 {
@@ -76,21 +81,30 @@ h3 {
     font-weight: 400;
 }
 
+span {
+    margin: 0;
+}
+
 #header-main h1{
-    margin-top: 0.6rem;
+    margin: 0.6rem 1rem 0.2rem 1rem;
+    padding: 0.2rem;
     font-family: var(--font-main-header-h1), 'Courier New', 'monospace';
     font-weight: 400;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
+    border-radius: 1rem;
+    background-color: var(--color-button);
+    color: var(--color-text-button);
+    box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
 }
 
 #header-main h2 {
     font-size: 1rem;
-    margin-bottom: 0.6rem;
+    margin: 1rem 0 0.6rem 0;
 }
 
 #header-province-h3 {
-    margin-top: 1rem;
-    font-size: 1.6rem;
+    margin-top: 0.4rem;
+    font-size: 1.8rem;
 }
 
 #header-rates-h3 {
@@ -113,7 +127,36 @@ header table {
     fill: var(--color-text);
 }
 
-/* Navigational bars */
+
+#svg-info {
+    position: absolute;
+    right: 1rem;
+    top: 0.1rem;
+    margin-bottom: -0.3rem;
+    height: 2rem;
+    width: auto;
+    transform: scale(1);
+    fill: var(--color-text);
+}
+
+#input-div {
+    position: relative;
+}
+
+#nav-main {
+    gap: 1rem;
+    border-top: 0.14rem solid var(--color-text);
+    border-bottom: 0.14rem solid var(--color-text);
+    padding: 0.2rem 0 0.6rem 0;
+}
+
+.nav-main-button {  
+    width: 14rem;
+    box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
+
+}
+
+/* Navigational bars and buttons */
 
 nav {
     width: 100%;
@@ -121,36 +164,45 @@ nav {
     justify-content: center;    
 }
 
-#nav-main {
-    border-top: 0.14rem solid var(--color-border);
-    border-bottom: 0.14rem solid var(--color-border);
+button {
+    background-color: var(--color-button);
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--color-text-button);
+    border: none;
 }
 
-.nav-button {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
-    width: 10rem;
-    background-color: var(--color-button);
-    border: 0.14rem solid var(--color-border);
-    border-radius: 0.4rem;
-    margin: 0.2rem 0.2rem 0.4rem 0.2rem;
-    box-shadow: 0 0.2rem 0.4rem 0;
-}
-
-.nav-drop-button {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
-    width: 10rem;
-    background-color: var(--color-button);
-    border: 0.14rem solid var(--color-border);
-    margin: 0;
-    box-shadow: 0 0.2rem 0.4rem 0;
+button:hover {
+    background-color: var(--color-button-hover);
 }
 
 #drop-down-provinces {
-    border: 0.1rem solid var(--color-border);
-    border-radius: 0.4rem;
+    margin-top: 0.2rem;
+    width: 14rem;
+    background-color: var(--color-button);
+    border-radius: 0.2rem;
+    box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
 }
+
+
+.nav-drop-button {
+    width: 14rem;
+    margin: 0;
+}
+
+.calc-button {
+    margin: 0.4rem 0.2rem 0.4rem 0.2rem;
+    box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+}
+
+#drop-down-tip {
+    background-color: var(--color-button);
+    border-radius: 0.2rem;
+    box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
+}
+
 
 /* Drop-down menus */
 
@@ -173,34 +225,66 @@ nav {
 
 /* Modal */
 
-#error {
-    padding: 1rem 0.4rem 0.4rem 0.4rem;
-    border: solid var(--color-border) 2px;
-    min-width: 80%;
+.modal {
+    position: fixed;
+    min-width: 300px;
     max-width: 500px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 0.6rem 0.6rem 0.6rem;
+    border: 0.14rem solid var(--color-text);
+    text-justify: auto;
+}
 
+.modal button {
+    margin-left: 50%;
+    transform: translate(-50%); 
+    width: 5rem;
+    margin-top: 1rem;
 }
 
 /* Main */
 
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    background-color: var(--color-background);
+    position: relative;
+    margin: auto;
+    min-height: 300px;
+    min-width: 240px;
+    max-width: 300px;
 }
 
 .main-section {
     text-align: center;
     min-width: 200px;
-    max-width: 300px;
+    max-width: 500px;
 }
+
+/* Calculator */
 
 #calculator {
     margin-bottom: 1rem;
 }
 
+#amount {
+    margin-bottom: 1rem;
+    text-align: right;
+    font-size: 1.6rem;
+    width: 12rem;
+}
+
+/* Feedback */
+
+#feedback {
+    margin-top: 2rem;
+}
+
 #feedback-table {
     margin: auto;
+    font-size: 1.4rem;
     margin-top: 1rem;
     border-collapse: collapse;
 }
@@ -210,10 +294,51 @@ main {
 }
 
 .td-border {
-    border-top: solid 0.1rem var(--color-border);
-    border-bottom: 0.25rem double;   
+    border-top: solid 0.1rem var(--color-text);
+    border-bottom: 0.25rem double  var(--color-text);   
 }
 
 .td-no-border {
     border: none;
+}
+
+#total-amount, #tip-total-amount {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Tablet, laptop and desktop design */
+
+@media only screen and (min-width: 768px) {
+
+    body {
+        font-size: 1.2rem;
+    }
+
+    #header-main h1 {
+        font-size: 4rem;
+    }
+
+    #header-main h2 {
+        font-size: 1.6rem;
+    }
+
+    #header-province-h3 {
+        font-size: 3rem;
+    }
+
+    #header-rates-h3 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.4rem;
+    }
+
+    .modal {
+        position: absolute;
+        top: 5rem;
+        min-width: 550px;
+        overflow-y: scroll;
+    }
 }
