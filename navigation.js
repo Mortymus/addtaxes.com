@@ -41,7 +41,7 @@ function hideMenus(event) {
         hideMenu("drop-down-provinces");
     }
     if (!menuTip.contains(event.target)) {
-        hideMenu("container-tip");
+        hideMenu("drop-down-tip");
     }
 }
 
