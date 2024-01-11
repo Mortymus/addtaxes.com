@@ -1,4 +1,4 @@
-/* Mobile first design *7
+/* Mobile first design */
 
 /* Fonts */
 
@@ -42,7 +42,7 @@
 :root {
     --color-text: #000000;
     --color-border: #0275d8;
-    --color-body: #faf9f6;
+    --color-body: #e4dede;
     --color-background: #faf9f6;
     --color-text-button: #ffffff; 
     --color-button: #0275d8;
@@ -141,8 +141,6 @@ header table {
 
 #nav-main {
     gap: 1rem;
-    border-top: 0.14rem solid var(--color-text);
-    border-bottom: 0.14rem solid var(--color-text);
     padding: 0.2rem 0 0.6rem 0;
 }
 
@@ -162,7 +160,7 @@ nav {
 
 button {
     background-color: var(--color-button);
-    border-radius: 0.2rem;
+    border-radius: 0.4rem;
     font-size: 1.4rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--color-text-button);
@@ -177,7 +175,7 @@ button:hover {
     margin-top: 0.2rem;
     width: 14rem;
     background-color: var(--color-button);
-    border-radius: 0.2rem;
+    border-radius: 0.4rem;
     box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
 }
 
@@ -211,15 +209,16 @@ button:hover {
 
 .drop-down-visible {
     position: absolute;
-    background-color: var(--color-background);
+    background-color: var(--color-body);
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: 1;    
 }
 
 /* Modal */
 
 .modal {
+    opacity: 1;
     position: fixed;
     min-width: 260px;
     max-width: 500px;
@@ -230,8 +229,6 @@ button:hover {
     transform: translate(-50%, -50%);
     padding: 2rem 1rem 1rem 1rem;
     border: 0.14rem solid var(--color-text);
-    text-align: justify;
-    text-justify: inter-word;
     overflow-y: auto;
 }
 
@@ -245,7 +242,6 @@ button:hover {
 /* Main */
 
 main {
-    background-color: var(--color-background);
     position: relative;
     margin: auto;
     min-width: 300px;
@@ -263,6 +259,10 @@ main {
 }
 
 #amount {
+    border: solid 0.15rem #000000;
+    border-radius: 1rem;
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
     margin-bottom: 1rem;
     text-align: right;
     font-size: 1.6rem;
@@ -273,6 +273,8 @@ main {
 
 #feedback {
     margin-top: 2rem;
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
 }
 
 #feedback-table {
