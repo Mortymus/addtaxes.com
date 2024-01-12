@@ -24,10 +24,28 @@
         <!-- Main navigational bar -->
 
         <nav id="nav-main">
+
+            <!-- Drop-down container -->
             <div class="container" id="container-provinces">
-                <button onclick="dropMenu('drop-down-provinces')" class="nav-main-button">
-                    Choose province
+                
+                <!-- Drop-down button-->
+                <button onclick="dropMenu('drop-down-provinces')" id="nav-main-button">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="svg-dropdown">
+                            <path d="M480-360 280-560h400L480-360Z"/>
+                        </svg>
+                    </div>
+                    <header>            
+                        <h3 id="header-province-h3">Province</h3>                    
+                        <h3 id="header-rates-h3">
+                            <span id="gst">GST</span>
+                            <span id="pst">PST</span>
+                            <span id="hst">HST</span>
+                        </h3>               
+                    </header>
                 </button>
+
+                <!-- Drop-down menu -->
                 <div class="drop-down-hidden" id="drop-down-provinces">
                     <button onclick="chooseProvince(amount, province, 'Alberta', 5, 0, 0)" class="nav-drop-button">
                         Alberta
@@ -71,17 +89,6 @@
                 </div>
             </div>
         </nav>
-
-        <!-- Province header-->
-
-        <header>            
-                        <h3 id="header-province-h3">Province</h3>                    
-                        <h3 id="header-rates-h3">
-                            <span id="gst">GST</span>
-                            <span id="pst">PST</span>
-                            <span id="hst">HST</span>
-                        </h3>               
-        </header>
 
         <!-- Main section -->
 
@@ -154,7 +161,7 @@
                     </svg>
                 </div>
                 <nav>
-                    <div class="container" id="container-tip">
+                    <div class="container">
                         <button onclick="dropMenu('drop-down-tip')" class="calc-button">
                             tip
                         </button>

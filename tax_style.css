@@ -139,15 +139,21 @@ header table {
     gap: 0.2rem;
 }
 
-#nav-main {
-    gap: 1rem;
-    padding: 0.2rem 0 0.6rem 0;
+#container-provinces {
+    width: 100%;
+    padding: 0.6rem 1rem 0.2rem 1rem;
 }
 
-.nav-main-button {  
-    width: 14rem;
+#nav-main-button { 
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    border-radius: 1rem;
     box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
+}
 
+.nav-main-button > div:first-child {
+    border-right: solid 0.2rem #000000;
 }
 
 /* Navigational bars and buttons */
@@ -173,15 +179,15 @@ button:hover {
 
 #drop-down-provinces {
     margin-top: 0.2rem;
-    width: 14rem;
+    border-radius: 1rem;
     background-color: var(--color-button);
-    border-radius: 0.4rem;
     box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
 }
 
 .nav-drop-button {
-    width: 14rem;
-    margin: 0;
+    border-radius: 1rem;
+    width: 100%;
+    
 }
 
 .calc-button {
@@ -197,6 +203,11 @@ button:hover {
 }
 
 /* Drop-down menus */
+
+.svg-dropdown {
+    width: 4rem;
+    height: auto;
+}
 
 .container {
     position: relative;
@@ -230,6 +241,7 @@ button:hover {
     padding: 2rem 1rem 1rem 1rem;
     border: 0.14rem solid var(--color-text);
     overflow-y: auto;
+    z-index: 2;
 }
 
 .modal button {
