@@ -52,6 +52,8 @@
 /* Body */
 
 body {
+    min-width: 360px;
+    max-width: 600px;
     margin: auto;
     color: var(--color-text);
     background-color: var(--color-body);
@@ -140,12 +142,13 @@ header table {
 }
 
 #container-provinces {
-    width: 100%;
-    padding: 0.6rem 1rem 0.2rem 1rem;
+    z-index: 2;
+    width: calc(100% - 2rem);
+    
 }
 
 #nav-main-button { 
-    width: 100%; 
+    width: 100%;
     display: flex;
     flex-direction: row;
     border-radius: 1rem;
@@ -178,6 +181,7 @@ button:hover {
 }
 
 #drop-down-provinces {
+    width: 100%;
     margin-top: 0.2rem;
     border-radius: 1rem;
     background-color: var(--color-button);
@@ -207,6 +211,8 @@ button:hover {
 .svg-dropdown {
     width: 4rem;
     height: auto;
+    fill: var(--color-text-button);
+
 }
 
 .container {
@@ -241,7 +247,7 @@ button:hover {
     padding: 2rem 1rem 1rem 1rem;
     border: 0.14rem solid var(--color-text);
     overflow-y: auto;
-    z-index: 2;
+    z-index: 3;
 }
 
 .modal button {
@@ -273,6 +279,7 @@ main {
 #amount {
     border: solid 0.15rem #000000;
     border-radius: 1rem;
+    box-shadow: 0.2rem 0.4rem 0.2rem 0 #000000;
     padding-right: 0.4rem;
     padding-left: 0.4rem;
     margin-bottom: 1rem;

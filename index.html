@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="tax_style.css">
         <link rel=icon href="images/dollar.svg">
-        <script src="objects.js" defer></script>
+        <script src="objects.js"> defer</script>
         <script src="displayObjects.js" defer></script>
         <script src="navigation.js" defer></script>
         <script src="calculations.js" defer></script>
@@ -15,26 +15,22 @@
     <body onload="showProvince(province)">
 
         <!--- Top header -->
-
         <header id="header-main">
             <h1>addtaxes.com</h1>
-            <h2>Official Canadian rates of gst, pst and hst</h2>
+            <h2>Official Canadian gst, pst & hst rates</h2>
         </header>
         
-        <!-- Main navigational bar -->
-
+        <!-- Navigation provinces -->
         <nav id="nav-main">
 
-            <!-- Drop-down container -->
+            <!-- Drop-down provinces container -->
             <div class="container" id="container-provinces">
                 
                 <!-- Drop-down button-->
-                <button onclick="dropMenu('drop-down-provinces')" id="nav-main-button">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="svg-dropdown">
-                            <path d="M480-360 280-560h400L480-360Z"/>
-                        </svg>
-                    </div>
+                <button onclick="dropMenu('drop-down-provinces')" id="nav-main-button">                    
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="svg-dropdown">
+                        <path d="M480-360 280-560h400L480-360Z"/>
+                    </svg>                    
                     <header>            
                         <h3 id="header-province-h3">Province</h3>                    
                         <h3 id="header-rates-h3">
@@ -91,8 +87,9 @@
         </nav>
 
         <!-- Main section -->
+        <main>
 
-        <main>                       
+            <!-- Error modal -->                       
             <div id="error" class="drop-down-hidden modal">
                 <svg xmlns="http://www.w3.org/2000/svg" class="svg-x" 
                     onclick="hideMenu('error')" viewBox="0 -960 960 960">
@@ -108,6 +105,8 @@
                 </p>
                 <button onclick="hideMenu('error')">Ok</button>
             </div>
+
+            <!-- Info modal -->
             <div id="info-modal" class="drop-down-hidden modal">
                 <svg xmlns="http://www.w3.org/2000/svg" class="svg-x" 
                     onclick="hideMenu('info-modal')" viewBox="0 -960 960 960">
@@ -139,11 +138,12 @@
             </div>
             
             <!-- Calculator Section -->
-
             <section id="calculator" class="main-section">
                 <p>
                     Please enter amount: 
                 </p>
+
+                <!-- Input -->
                 <div id="input-div">               
                     <input type="text" id="amount" maxlength="8">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" id="svg-info"
@@ -160,11 +160,17 @@
                             0-232.985 96.327Q150-617.346 150-479.729q0 136.242 96.387 232.985Q342.773-150 480.271-150ZM480-480Z"/>
                     </svg>
                 </div>
+
+                <!-- Navigation calculator buttons -->
                 <nav>
-                    <div class="container">
+
+                    <!-- Tip dropdown container -->
+                    <div class="container" id="container-tip">
                         <button onclick="dropMenu('drop-down-tip')" class="calc-button">
                             tip
                         </button>
+
+                        <!-- Tip dropdown buttons -->
                         <div class="drop-down-hidden" id="drop-down-tip">
                             <button onclick="addTip(amount, province, 5)" class="tip-button">
                                 5%
@@ -186,6 +192,8 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Single calculator buttons -->
                     <button onclick="calculateTax(amount, province)" class="calc-button">%</button>
                     <button onclick="deductTax(amount, province)" class="calc-button">deduct</button>
                     <button onclick="addTax(amount, province)" class="calc-button">add</button>
@@ -194,7 +202,6 @@
             </section>
 
             <!-- Feedback section -->
-
             <section id="feedback" class="main-section">
                 <table id="feedback-table">
                     <tr>
