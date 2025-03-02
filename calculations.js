@@ -2,7 +2,7 @@
 
 // Adding tax
 function addTax(amountObject, provinceObject) {
-    let input = validateInput(document.getElementById("amount").value);
+    let input = validateInput();
     if (input > 0 || input != amountObject.amount) {
         resetTip(amountObject);
         amountObject.amount = input;
@@ -18,7 +18,7 @@ function addTax(amountObject, provinceObject) {
 
 // Deducting tax
 function deductTax(amountObject, provinceObject) {
-    let input = validateInput(document.getElementById("amount").value);
+    let input = validateInput();
     if (input > 0 || input != amountObject.amount) {
         resetTip(amountObject);
         amountObject.amount = input;
@@ -37,7 +37,7 @@ function deductTax(amountObject, provinceObject) {
 
 // Calculating tax
 function calculateTax(amountObject, provinceObject) {
-    let input = validateInput(document.getElementById("amount").value);
+    let input = validateInput();
     if (input > 0 /*&& amountObject.total == 0*/ || input != amountObject.amount) {
         resetTip(amountObject);
         amountObject.amount = input;
@@ -57,7 +57,7 @@ function calculateTax(amountObject, provinceObject) {
 function addTip(amountObject, provinceObject, rate) {
     hideMenu("drop-down-tip")
     if (document.getElementById("amount").value !== "" || amountObject.amount === 0) {
-        let input = validateInput(document.getElementById("amount").value);
+        let input = validateInput();
         if (input !== amountObject.amount) {
             amountObject.amount = input;
             amountObject.gst = 0;
@@ -97,7 +97,8 @@ function resetTip(amountObject) {
 
 
 // Validation of input
-function validateInput(input) {
+function validateInput() {
+    let input = document.getElementById("amount").value.replace(",", ".");
     let error = "";
     if (input === "") {
         error += "You have to enter an amount.\n";
@@ -109,7 +110,7 @@ function validateInput(input) {
         error += "The entered amount must be larger than zero.\n";
     };
     if (input.length > 14) {
-        error += "A maximum of 14 characters is allowed to enter amount.\n";
+        error += "A maximum of 14 digits is allowed to enter amount.\n";
     };
     if (error !== "") {
         clearInput(amount);
