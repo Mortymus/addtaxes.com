@@ -49,6 +49,13 @@
     --color-button-hover: #5bc0de;
 }
 
+/* Animations */
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 /* Body */
 
 body {
@@ -61,7 +68,7 @@ body {
     font-weight: 400;
 }
 
-/* Header */
+/* Headers */
 
 header {
     margin: auto;
@@ -218,7 +225,7 @@ button:hover {
     position: relative;
 }
 
-.drop-down-hidden {
+.drop-down-hidden {    
     position: absolute;
     display: none;
 }
@@ -228,7 +235,9 @@ button:hover {
     background-color: var(--color-body);
     display: flex;
     flex-direction: column;
-    z-index: 1;    
+    z-index: 1;
+    animation-name: fade-in;
+    animation-duration: 0.4s;    
 }
 
 .nav-drop-button {
@@ -250,7 +259,7 @@ button:hover {
     padding: 2rem 1rem 1rem 1rem;
     border: 0.14rem solid var(--color-text);
     overflow-y: auto;
-    z-index: 3;
+    z-index: 3;    
 }
 
 .modal button {
