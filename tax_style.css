@@ -189,9 +189,9 @@ button:hover {
 }
 
 .nav-drop-button {
+    font-family: var(--font-header-h3);
     border-radius: 1rem;
-    width: 100%;
-    
+    width: 100%;    
 }
 
 .calc-button {
@@ -212,7 +212,6 @@ button:hover {
     width: 4rem;
     height: auto;
     fill: var(--color-text-button);
-
 }
 
 .container {
@@ -230,6 +229,10 @@ button:hover {
     display: flex;
     flex-direction: column;
     z-index: 1;    
+}
+
+.nav-drop-button {
+    font-size: 1.2rem;
 }
 
 /* Modal */
@@ -350,10 +353,6 @@ main {
         position: absolute;
         top: 5rem;
         min-width: 550px;
-    }
-
-    .nav-drop-button {
-        font-size: 1rem;
     }
 
     #feedback-table {
