@@ -7,7 +7,7 @@
             content="A simple Canadian tax calculator that adds, deducts, 
             and calculates sales tax by province or territory. 
             Easily include a tip at any stage with a single click.">
-        <link rel="stylesheet" href="tax_style.css">
+        <link rel="stylesheet" href="style_revised.css">
         <link rel=icon href="images/dollar.svg">
         <script src="objects.js" defer></script>
         <script src="displayObjects.js" defer></script>
@@ -109,7 +109,7 @@
                 </p>
                 <button onclick="hideMenu('error')">Ok</button>
             </div>
-
+            
             <!-- Info modal -->
             <div id="info-modal" class="drop-down-hidden modal">
                 <svg xmlns="http://www.w3.org/2000/svg" class="svg-x" 
@@ -122,22 +122,43 @@
                         863-771v582q0 37.175-27.206 64.088Q808.588-98 
                         771-98H189Zm0-91h582v-582H189v582Zm0-582v582-582Z"/>
                 </svg>
-                <p>
-                    Please select your province or territory for the applicable gst, pst 
-                    or hst taxes.                
-                <br><br>
-                    Enter the amount that you wish to perform calculations on.                
-                <br><br>
-                    Press add to add the applicable amount of sales tax to the entered amount.
-                <br><br>
-                    Press deduct to subtract the applicable amount of sales tax from 
-                    the entered amount.                
-                <br><br>
-                    Press % to calculate how much sales tax is included in the entered 
-                    amount.
-                <br><br>
-                    Use the tip button to add a tip at any point of your calculation.
-                </p>
+                <h2 id="info-title">How to use the calculator</h2>
+
+                    <ol class="instructions">
+                        <li>
+                            <strong>Select your province or territory.</strong>
+                            This determines the applicable GST, PST, or HST rate.
+                        </li>
+
+                        <li>
+                            <strong>Enter an amount.</strong>
+                            Enter the amount you want to calculate taxes on.
+                        </li>
+
+                        <li>
+                            <strong>Add tax.</strong>
+                            Press <strong>Add</strong> to add the applicable sales tax
+                            to the entered amount.
+                        </li>
+
+                        <li>
+                            <strong>Deduct tax.</strong>
+                            Press <strong>Deduct</strong> to subtract the applicable
+                            sales tax from the entered amount.
+                        </li>
+
+                        <li>
+                            <strong>Calculate included tax.</strong>
+                            Press <strong>%</strong> to determine how much sales tax
+                            is included in the entered amount.
+                        </li>
+
+                        <li>
+                            <strong>Add a tip.</strong>
+                            Use the <strong>Tip</strong> button to add a tip at any
+                            point during your calculation.
+                        </li>
+                    </ol>
                 <button onclick="hideMenu('info-modal')">Ok</button>
             </div>
             
@@ -193,6 +214,9 @@
                             </button>
                             <button onclick="addTip(amount, province, 30)" class="tip-button">
                                 30%
+                            </button>
+                            <button onclick="addTip(amount, province, 30)" class="tip-button">
+                                35%
                             </button>
                         </div>
                     </div>
