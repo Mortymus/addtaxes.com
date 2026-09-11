@@ -65,7 +65,7 @@
                     <button onclick="chooseProvince(amount, province, 'Northwest Territories', 5, 0, 0)" class="nav-drop-button">
                         Northwest Territories
                     </button>
-                    <button onclick="chooseProvince(amount, province, 'Nova Scotia', 0, 0, 15)" class="nav-drop-button">
+                    <button onclick="chooseProvince(amount, province, 'Nova Scotia', 0, 0, 14)" class="nav-drop-button">
                         Nova Scotia
                     </button>
                     <button onclick="chooseProvince(amount, province, 'Nunavut', 5, 0, 0)" class="nav-drop-button">
@@ -92,7 +92,6 @@
 
         <!-- Main section -->
         <main>
-
             <!-- Error modal -->                       
             <div id="error" class="drop-down-hidden modal">
                 <svg xmlns="http://www.w3.org/2000/svg" class="svg-x" 
@@ -122,8 +121,8 @@
                         863-771v582q0 37.175-27.206 64.088Q808.588-98 
                         771-98H189Zm0-91h582v-582H189v582Zm0-582v582-582Z"/>
                 </svg>
-                <h2 id="info-title">How to use the calculator</h2>
-
+                <p>
+                    <h2 id="info-title">How to use the calculator</h2>
                     <ol class="instructions">
                         <li>
                             <strong>Select your province or territory.</strong>
@@ -159,6 +158,7 @@
                             point during your calculation.
                         </li>
                     </ol>
+                </p>
                 <button onclick="hideMenu('info-modal')">Ok</button>
             </div>
             
@@ -217,6 +217,9 @@
                             </button>
                             <button onclick="addTip(amount, province, 30)" class="tip-button">
                                 35%
+                            </button>
+                            <button onclick="addTip(amount, province, 30)" class="tip-button">
+                                40%
                             </button>
                         </div>
                     </div>
