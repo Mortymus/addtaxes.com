@@ -620,7 +620,7 @@ button:active {
     width: 100%;
     margin-top: 0;
     padding: 1rem;
-    min-height: 16rem;
+    min-height: 20rem;
 }
 
 #feedback-table {
@@ -867,5 +867,14 @@ button:active {
 }
 .tip-button{
     font-size: 0.8rem;
+}
+
+@media only screen and (max-height: 761px) {
+#feedback {
+    min-height: 18rem;
+}
+#feedback-table {
+    font-size: 0.9rem;
+}
 }
 }
