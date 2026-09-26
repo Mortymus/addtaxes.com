@@ -3,7 +3,7 @@
 
 This website is a simple tool for adding, deducting or calculating Canadian sales taxes. Listed prices in Canada are typically subject to sales taxes that vary by province or territory.
 
-![Simple tax-calculator for Canadian sales taxes.](images/application_image.png)
+![Simple tax-calculator for Canadian sales taxes.](images/application_image_revised260926.png)
 
 The tax calculator features a simple design built with pure JavaScript. Tax rates are determined by the selected province, and the selection is saved for future visits. Once loaded, the calculator can be used offline without an internet connection.
 
